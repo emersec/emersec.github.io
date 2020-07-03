@@ -131,7 +131,11 @@
 		var lat=params.get('lat');
 		var lon=params.get('lon');
 		var nombre=params.get('n');	
-		var map = L.map('map').setView([lat, lon], 16);
+		if (lat!=null){
+      var map = L.map('map').setView([lat, lon], 16);
+    } else {
+      var map = L.map('map').setView([-26.1775300, -58.1781400], 16);
+    }
 
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
