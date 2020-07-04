@@ -96,20 +96,20 @@
  <!-- Modal fin -->
 
  <!-- Mapa Leaflet -->
- <div class="jumbotron text-center danger bg-danger mb-2" style="padding-top: 2.5%;padding-bottom:1%;">
+ <div class="jumbotron text-center danger bg-danger mb-2" style="border-radius:0;padding-top: 2.5%;padding-bottom:1%;">
   		<h1 class="text-light titulo">EMER-SEC</h1>
   		
 </div>
 <!-- Mapa Leaflet inicio -->
 <div class="container-fluid px-0">
- 	 	<div class="row ">
+ 	 	<div class="row mt-0">
     		<div class="col-md-12 col-lg-12">
     			<div id="map" style="height: 85vh;width:100%;  "></div>
     		</div>
   		</div>
   		
 </div>
-<!-- Mapa Leaflet fin  height: 500px; -->
+<!-- Mapa Leaflet fin  -->
 
 
 	
@@ -166,66 +166,7 @@
   <!-- barrios -->
   <script type="text/javascript" >
 
-    function cargarBarrios(){
-      $.ajax({url: "./php/barrios.php", success: function(respuesta){
-        $("#barrios").append(respuesta);
-        $('#exampleModalCenter').modal('show');
-      }});
-    }
-
-
-    //Boton Aceptar de seleccionar Barri
-    $('#btn_aceptar_barrio').on('click',function(){
-        $('#exampleModalCenter').modal('hide');
-        
-        var day= new Date().getDay()+1;
-        var id_barrio=document.getElementById("barrios").value;
-        obtenerHorario(day,id_barrio);
-
-        $('#exampleModalCenter').on('hidden.bs.modal', function (e) {
-            $('#modalTiempo').modal('show');
-        });
-    });
-
-    function obtenerHorario(dia,barrio){
-       $.ajax({url: "./php/obtenerHorario.php",data:{"dia":dia,"barrio":barrio},
-        type:"GET", 
-        success: function(respuesta){
-        respuesta=JSON.parse(respuesta);
-
-        
-        $('#alert_horario')
-        .html(construirInterfazHorario(respuesta.HORA,barrio));
-      }});
-    }
-
-
-
-  function construirInterfazHorario(hora,barrio){
-    var hora=calcularHora(hora);
-    if (hora<0){return "El camion recolector ya ha pasado por el barrio <Strong>" +barrio + "</Strong> hoy. Vea los <a href=# class='alert-link'> Horarios de recoleccion </a> para mas informacion";}
-    if (hora==0) {"El camion recolector pasará dentro de <strong>" + new Date().getMinutes() + " minutos</strong> por el barrio <strong> "+barrio+"</strong> segun el horario programado"; }
     
-    return "El camion recolector pasara dentro de <strong>" + hora + " horas </strong> por el barrio <strong> "+barrio+"</strong> segun el horario programado";
-
-
-  }
-
-
-
-
-  function calcularHora(horaDeRecoleccion){
-    var horaActual=new Date().getHours();
-    horaDeRecoleccion=horaDeRecoleccion -horaActual;
-
-    return horaDeRecoleccion
-  }
-
-  //--------------------------------------------------------
-   $("#btn_horario_aceptar").on("click",function(data){
-    $("#modalTiempo").modal("hide");
-   })
-
   </script>
   </body>
 </html>
