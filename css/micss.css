@@ -13,13 +13,20 @@ body{
 }
 
 .header{
-    padding: 5px;
-    background-color: yellow;
+    padding: 8px;
+    background-color: rgb(255, 213, 0);
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
 
 .milabel{
     font-size: 8px;
     color: black;
     background-color: transparent;
+}
+
+.mi_boton{
+    border-radius: 5px;
+    border: 1px solid white;
 }

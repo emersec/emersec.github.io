@@ -13,7 +13,9 @@
     <header class="header">
         <div class='Icono_header'>Colectivos</div>
         <div class='elementos'>
-
+          <button class='mi_boton' onclick='detectarMiPosicion();'>
+            Mi ubicacion
+          </button>
         </div>
        
     </header>
@@ -77,6 +79,31 @@
 
         // // // zoom the map to the polygon
         //  map.fitBounds(polygon.getBounds());
+
+        var miubicacion;
+        function detectarMiPosicion(){
+          navigator.geolocation.getCurrentPosition((position) => {
+
+              let lat = position.coords.latitude;
+              let long = position.coords.longitude;
+
+               miubicacion = L.latLng(lat, long);
+               barrios.features.forEach(elemento => {
+          
+                  latlngs=L.GeoJSON.coordsToLatLngs(elemento.geometry.coordinates[0]);
+                  
+                  var poligon=L.polygon(latlngs, {color: 'red'})
+
+                  if(poligon.getBounds().contains(point)){
+                    console.log('si');
+                    console.log(elemento.properties['NOMBRE']);
+                    console.log(poligon.getBounds());
+                    alert(elemento.properties['NOMBRE']);
+                  }
+              });
+          });
+
+        }
     </script>
 </body>
 </html>
