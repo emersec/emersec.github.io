@@ -95,9 +95,9 @@
                   
                   var poligon=L.polygon(latlngs, {color: 'red'})
 
-                  if(poligon.getBounds().contains(point)){
-                    var marker = L.marker(point).addTo(map);
-                    console.log('coordenadas'+point);
+                  if(poligon.getBounds().contains(miubicacion)){
+                    var marker = L.marker(miubicacion).addTo(map);
+                    console.log('coordenadas'+miubicacion);
                     console.log('si');
                     console.log(elemento.properties['NOMBRE']);
                     console.log(poligon.getBounds());
