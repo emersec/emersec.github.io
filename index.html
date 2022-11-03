@@ -1,104 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colectivos - Formosa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <link rel="stylesheet" href="css/micss.css"></link>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+</head>
+<body>
+    <header class="header">
+        <div class='Icono_header'>Colectivos</div>
+        <div class='elementos'>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+        </div>
+       
+    </header>
+    <div id='map' class='mi_mapa'>
 
-	<!-- LEAFLET CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
+    </div>
 
-   <!-- LEAFLET JAVASCRIPT -->
- 	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
+    <script src="js/afsa-barrios.js"></script>
+    <script>
+         var latlngs=[];
+        var map = L.map('map').setView([-26.175569, -58.179647], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(map);
 
-    <title>Emer-Sec</title>
-	
-	<!-- Fuente del titulo de la pagina -->
-    <link rel="stylesheet" type="text/css" href="estilos.css">
-  </head>
-  <body style="margin: 0;min-height:100%;">
-<!-- Modal Segundo-->
+        var point;
+        
+        // navigator.geolocation.getCurrentPosition((position) => {
+        //     let lat = position.coords.latitude;
+        //     let long = position.coords.longitude;
 
+        //     var point = L.point(lat, long);
+        //     console.log(point);
+        // });
+        
+        var point = L.latLng(-26.1521408, -58.1435392);
+        barrios.features.forEach(elemento => {
+          
+            latlngs=L.GeoJSON.coordsToLatLngs(elemento.geometry.coordinates[0]);
+            
+            var poligon=L.polygon(latlngs, {color: 'red'}).addTo(map);
+            var myIcon = L.divIcon({className: 'my-div-icon',html:"<span class='milabel'>"+elemento.properties['NOMBRE']+"</span>"});
 
- <!-- Mapa Leaflet -->
- <div class="jumbotron text-center danger bg-danger mb-0" style="border-radius:0;padding-top: 2.5%;padding-bottom:1%;">
-  		<h1 class="text-light titulo">EMER-SEC</h1>
-  		
-</div>
-<!-- Mapa Leaflet inicio -->
-<div class="container-fluid px-0">
- 	 	<div class="row  mt-0">
-    		<div class="col ">
-    			<div id="map" style="height: 85vh;width:100%;  "></div>
-    		</div>
-  		</div>
-  		
-</div>
-<!-- Mapa Leaflet fin  -->
+            L.marker(poligon.getBounds().getCenter(), {icon: myIcon}).addTo(map);
 
+           if(poligon.getBounds().contains(point)){
+            console.log('si');
+            console.log(elemento.properties['NOMBRE']);
+            console.log(poligon.getBounds());
+            
+           }
+        });
 
-	
+        // console.log(barrios.features[0].geometry.coordinates[0]);
 
-	
-    
+        // for (i=0;i<barrios.features[0].geometry.coordinates[0].length-1;i++){
+        //         console.log(barrios.features[0].geometry.coordinates[0][i]);
+        //         latlngs.push(barrios.features[0].geometry.coordinates[0][i]);
+        // }
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" >
-    	let params = new URLSearchParams(location.search);
+        
+        // console.log(latlngs);
 
-		var lat=params.get('lat');
-		var lon=params.get('lon');
-		var nombre=params.get('n');	
-		if (lat!=null){
-      var map = L.map('map').setView([lat, lon], 16);
-    } else {
-      var map = L.map('map').setView([-26.1775300, -58.1781400], 16);
-    }
+        // var latlngs=L.GeoJSON.coordsToLatLngs(barrios.features[0].geometry.coordinates[0]);
 
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-		}).addTo(map);
+        // // // create a red polygon from an array of LatLng points
+        // // var latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
 
-		var greenIcon = new L.Icon({
-			iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-			shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-			iconSize: [25, 41],
-			iconAnchor: [12, 41],
-			popupAnchor: [1, -34],
-			shadowSize: [41, 41]
-		});
+        //  var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
 
-
-		var marker=L.marker([lat, lon], {icon: greenIcon}).addTo(map);
-		marker.bindPopup("<b> "+nombre+"</b>").openPopup();
-
-		
-
-
-		
-
-	</script>
-
-  
-  
-  <!-- barrios -->
-  <script type="text/javascript" >
-
-    
-  </script>
-  </body>
+        // // // zoom the map to the polygon
+        //  map.fitBounds(polygon.getBounds());
+    </script>
+</body>
 </html>
