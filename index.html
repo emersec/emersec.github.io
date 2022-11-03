@@ -97,13 +97,18 @@
 
                   if(poligon.getBounds().contains(point)){
                     var marker = L.marker(point).addTo(map);
+                    console.log('coordenadas'+point);
                     console.log('si');
                     console.log(elemento.properties['NOMBRE']);
                     console.log(poligon.getBounds());
                     alert(elemento.properties['NOMBRE']);
                   }
               });
-          });
+          },function(e){},{
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0
+            });
 
         }
     </script>
