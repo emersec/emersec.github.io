@@ -24,6 +24,12 @@ body{
     font-size: 8px;
     color: black;
     background-color: transparent;
+    POSITION: ABSOLUTE;
+    LEFT: -100%;
+    TOP: -100%;
+    FONT-WEIGHT: 900;
+    TEXT-SHADOW: 0 0 2px white;
+    TEXT-ALIGN: center;
 }
 
 .mi_boton{
