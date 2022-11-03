@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+   height: 100vh;
+   margin: 0px; 
+   display: flex;
+   flex-direction: column;
+}
+.mi_mapa{
+   flex: 1;
+}
+
+.header{
+    padding: 5px;
+    background-color: yellow;
+    color: white;
+}
+
+.milabel{
+    font-size: 8px;
+    color: black;
+    background-color: transparent;
+}
