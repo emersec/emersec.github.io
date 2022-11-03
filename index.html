@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="header">
-        <div class='Icono_header'>Colectivos</div>
+        <div class='Icono_header'></div>
         <div class='elementos'>
           <button class='mi_boton' onclick='detectarMiPosicion();'>
             Mi ubicacion
@@ -50,8 +50,9 @@
             var poligon=L.polygon(latlngs, {color: 'red'}).addTo(map);
             var myIcon = L.divIcon({className: 'my-div-icon',html:"<span class='milabel'>"+elemento.properties['NOMBRE']+"</span>"});
 
+            
             L.marker(poligon.getBounds().getCenter(), {icon: myIcon}).addTo(map);
-
+           
            if(poligon.getBounds().contains(point)){
             console.log('si');
             console.log(elemento.properties['NOMBRE']);
@@ -95,6 +96,7 @@
                   var poligon=L.polygon(latlngs, {color: 'red'})
 
                   if(poligon.getBounds().contains(point)){
+                    var marker = L.marker(point).addTo(map);
                     console.log('si');
                     console.log(elemento.properties['NOMBRE']);
                     console.log(poligon.getBounds());
