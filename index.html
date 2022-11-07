@@ -11,12 +11,15 @@
 </head>
 <body>
     <header class="header">
-        <div class='Icono_header'></div>
-        <div class='elementos'>
+        
           <button class='mi_boton' onclick='detectarMiPosicion();'>
-            Mi ubicacion
+              Donde estoy
           </button>
-        </div>
+          
+         <div class='contenedor_lista'>
+          <input id="buscar" type="text" >
+          <ul id='lista_barrios' class='lista_barrios oculto'></ul>
+         </div>
        
     </header>
     <div id='map' class='mi_mapa'>
@@ -47,39 +50,34 @@
           
             latlngs=L.GeoJSON.coordsToLatLngs(elemento.geometry.coordinates[0]);
             
-            var poligon=L.polygon(latlngs, {color: 'red'}).addTo(map);
+            var poligon=L.polygon(latlngs, {color: 'red',weigth:0.5}).addTo(map);
             var myIcon = L.divIcon({className: 'my-div-icon',html:"<span class='milabel'>"+elemento.properties['NOMBRE']+"</span>"});
 
             
             L.marker(poligon.getBounds().getCenter(), {icon: myIcon}).addTo(map);
            
-           if(poligon.getBounds().contains(point)){
-            console.log('si');
-            console.log(elemento.properties['NOMBRE']);
-            console.log(poligon.getBounds());
-            
-           }
+         
         });
 
-        // console.log(barrios.features[0].geometry.coordinates[0]);
+        map.on('click', establecerDestino);
 
-        // for (i=0;i<barrios.features[0].geometry.coordinates[0].length-1;i++){
-        //         console.log(barrios.features[0].geometry.coordinates[0][i]);
-        //         latlngs.push(barrios.features[0].geometry.coordinates[0][i]);
-        // }
+        function establecerDestino(e){
+          //e.latlngs;
+          var destino = L.marker(e.latlng).addTo(map);
+          barrios.features.forEach(elemento => {
+              
+            latlngs=L.GeoJSON.coordsToLatLngs(elemento.geometry.coordinates[0]);
+              
+            var poligon=L.polygon(latlngs, {color: 'red'})
 
-        
-        // console.log(latlngs);
+            if(poligon.getBounds().contains(e.latlng)){
+              
 
-        // var latlngs=L.GeoJSON.coordsToLatLngs(barrios.features[0].geometry.coordinates[0]);
+              console.log(elemento.properties['NOMBRE']);
 
-        // // // create a red polygon from an array of LatLng points
-        // // var latlngs = [[37, -109.05],[41, -109.03],[41, -102.05],[37, -102.04]];
-
-        //  var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
-
-        // // // zoom the map to the polygon
-        //  map.fitBounds(polygon.getBounds());
+            }
+          });
+        }
 
         var miubicacion;
         function detectarMiPosicion(){
@@ -111,6 +109,66 @@
             });
 
         }
+
+     
+        document.getElementById('buscar').addEventListener('input',buscar);
+
+
+        var elementos_coinciden=[];
+        function buscar(e){
+        
+          var palabra_buscada=document.getElementById('buscar').value.toUpperCase();
+
+          if (palabra_buscada!=''){
+            document.getElementById('lista_barrios').classList.remove("oculto");
+          }else{
+            document.getElementById('lista_barrios').classList.add("oculto");
+          }
+
+          elementos_coinciden=[];
+
+          barrios.features.forEach(elemento => {
+          
+            if (elemento.properties['NOMBRE'].includes(palabra_buscada)){
+              elementos_coinciden.push(elemento);
+
+            }
+           
+          });
+
+          dubujarLista(elementos_coinciden);
+        }
+
+
+        function dubujarLista(elementos_coinciden){
+
+    
+
+          var html= "";
+          
+          for (i=0;i<=elementos_coinciden.length-1; i++){
+          
+            html+="<li tabindex='0' onclick='focusBarrio("+i+");'>"+elementos_coinciden[i].properties['NOMBRE']+"</li>";
+
+            if(i==4){break;}
+          }
+          
+          var lista = document.getElementById('lista_barrios');       
+          while(lista.firstChild){
+              lista.removeChild(lista.firstChild);
+          }
+
+            lista.insertAdjacentHTML('beforeend', html);
+            
+            
+        }
+
+        function focusBarrio(i){
+  
+          var centro_barrio=L.polygon(L.GeoJSON.coordsToLatLngs(elementos_coinciden[i].geometry.coordinates[0])).getBounds().getCenter();
+          map.setView(centro_barrio, 15, { animation: true });   
+        }
+
     </script>
 </body>
 </html>
