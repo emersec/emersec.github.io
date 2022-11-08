@@ -8,6 +8,11 @@ body{
    display: flex;
    flex-direction: column;
 }
+
+html{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .mi_mapa{
    flex: 1;
 }
@@ -54,10 +59,26 @@ body{
 .lista_barrios li{
     display: block;
 }
+
+.lista_barrios li:hover{
+    display: block;
+    background-color: rgb(159, 159, 246);
+    color: white;
+    cursor: pointer;
+}
+
+
+
 .oculto{
     visibility: hidden;
 }
 
 .contenedor_lista{
     position: relative;
+}
+
+
+.seleccionado{
+    background-color: rgb(159, 159, 246);
+    color: white;
 }

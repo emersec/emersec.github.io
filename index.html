@@ -112,7 +112,7 @@
 
      
         document.getElementById('buscar').addEventListener('input',buscar);
-
+        document.addEventListener('keydown',navegarConLasTeclas);
 
         var elementos_coinciden=[];
         function buscar(e){
@@ -139,7 +139,42 @@
           dubujarLista(elementos_coinciden);
         }
 
+        var elementoListaSeleccionado=0;
+        function navegarConLasTeclas(e){
 
+
+          
+          switch (e.key) {
+            
+              case 'ArrowUp':
+                    todos_los_elementos_lista[elementoListaSeleccionado].classList.remove('seleccionado');
+                    if (elementoListaSeleccionado>0) {
+                     
+                      elementoListaSeleccionado--;
+                     
+                    };
+                    todos_los_elementos_lista[elementoListaSeleccionado].classList.add('seleccionado');
+                  break;
+              case 'ArrowDown':
+                  
+                  todos_los_elementos_lista[elementoListaSeleccionado].classList.remove('seleccionado');
+                   if (elementoListaSeleccionado<(todos_los_elementos_lista.length-1)){
+                    elementoListaSeleccionado++;
+                  };
+                  todos_los_elementos_lista[elementoListaSeleccionado].classList.add('seleccionado');
+                  break;
+            
+              case 'Enter':
+                  todos_los_elementos_lista[elementoListaSeleccionado].click();
+                  elementoListaSeleccionado=0;
+              break;
+          }
+     
+        
+
+        }
+
+        var todos_los_elementos_lista;
         function dubujarLista(elementos_coinciden){
 
     
@@ -148,7 +183,7 @@
           
           for (i=0;i<=elementos_coinciden.length-1; i++){
           
-            html+="<li tabindex='0' onclick='focusBarrio("+i+");'>"+elementos_coinciden[i].properties['NOMBRE']+"</li>";
+            html+="<li tabindex='0' id='li"+i+1+"' onclick='focusBarrio("+i+");'>"+elementos_coinciden[i].properties['NOMBRE']+"</li>";
 
             if(i==4){break;}
           }
@@ -160,11 +195,12 @@
 
             lista.insertAdjacentHTML('beforeend', html);
             
+            todos_los_elementos_lista=document.querySelectorAll('.lista_barrios li');
             
         }
 
         function focusBarrio(i){
-  
+          document.getElementById('lista_barrios').classList.add("oculto");
           var centro_barrio=L.polygon(L.GeoJSON.coordsToLatLngs(elementos_coinciden[i].geometry.coordinates[0])).getBounds().getCenter();
           map.setView(centro_barrio, 15, { animation: true });   
         }
