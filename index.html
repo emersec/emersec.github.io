@@ -16,12 +16,22 @@
 
     <div class="main">
 
+      <div class="barra-lateral" id="barra_lateral">
+        <div class="flex justify-center align-center">
+          <img class='imagen-barra' src="./img/formosa_icono.jpg">
+          <div class="letra-blanca">FORMOSA</div>
+        </div> 
+        
+      </div>
       <div class="grupo-botones flex">
         <button class='mi-posicion' onclick='detectarMiPosicion();'>
           Donde estoy
         </button>
-        <button class='otra-busqueda' onclick='otraBusqueda();'>
+        <button class='otra-busqueda'  onclick='otraBusqueda();'>
           Buscar
+        </button>
+        <button class='mostrar-menu' id="mostrar_menu" onclick='mostrarMenu();'>
+          Menu
         </button>
       </div>
       
@@ -116,6 +126,8 @@
                     console.log('si');
                     console.log(elemento.properties['NOMBRE']);
                     console.log(poligon.getBounds());
+
+                    map.setView(miubicacion, 15, { animation: true });
                     alert(elemento.properties['NOMBRE']);
                   }
               });
@@ -248,6 +260,27 @@
     elementoHTML.parentElement.parentElement.classList.add('ocultar');
     // elementoHTML.parentElement.parentElement.style.display='none';
   }
+
+  function mostrarMenu(){
+    document.getElementById('barra_lateral').classList.remove('slide-out');
+    document.getElementById('barra_lateral').classList.add('slide-in');
+  }
     </script>
+  <script>
+    window.onload = ()=>{ document.addEventListener('click',ocultarBarra)};
+
+    function ocultarBarra(e){
+      e.stopPropagation();
+      let barraLateral = document.getElementById('barra_lateral');
+      let otraBusqueda = document.querySelector('.mostrar-menu');
+
+      console.log(e.target.isEqualNode(otraBusqueda));
+
+      if(!barraLateral.contains(e.target) && !otraBusqueda.contains(e.target) && barraLateral.classList.contains('slide-in')){
+        barraLateral.classList.remove('slide-in');
+        barraLateral.classList.add('slide-out');
+      }
+    }
+  </script>
 </body>
 </html>
