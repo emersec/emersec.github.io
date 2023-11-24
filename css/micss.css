@@ -1,11 +1,13 @@
 
 :root{
     --celestito:#00b6c1;
+    --celestito-oscuro:#009ba3;
     --violeta:rgb(159, 159, 246);
     --amarillo:rgb(243, 247, 110);
     --rojosito:rgb(247, 121, 110);
     --rojosito-oscuro: #d75043;
 }
+
 *{
     box-sizing: border-box;
 }
@@ -304,4 +306,13 @@ header.ocultar{
 
 .align-center{
     align-items: center;
+}
+
+.sombra{
+    BOX-SHADOW: 1PX 1PX 4PX #000000b0;
+    cursor:pointer;
+}
+
+.sombra:hover{
+    background-color: var(--celestito-oscuro);
 }
