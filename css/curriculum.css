@@ -297,6 +297,9 @@ background: var(--blanco-hueso);
 
     MIN-HEIGHT: 25REM;
     PADDING: 5REM;
+
+    /* width: 29rem;
+    PADDING: 2REM; */
 }
 
 .unidad-proyecto:not(:first-child){
@@ -331,5 +334,119 @@ background: var(--blanco-hueso);
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@media (max-width: 1720px){
+    .unidad-proyecto{
+        width: 30rem;
+        
+        MIN-HEIGHT: 20REM;
+        PADDING: 2REM;
+    }
+    .proyectos{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 1358px){
+    .sidebar{
+        width: 29rem;
+    }
+    .proyectos{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .unidad-proyecto{
+        width: 30rem;
+        
+        MIN-HEIGHT: 20REM;
+        PADDING: 2REM;
+    }
+}
+
+
+@media (max-width: 1180px){
     
+    .img-retrato {
+        height: 18rem;
+        width: 18rem;
+    }
+    .sidebar {
+        width: 23rem;
+    }
+
+    .unidad-proyecto{
+        width: 25rem;
+        
+        MIN-HEIGHT: 20REM;
+        PADDING: 2REM;
+    }
+}
+
+@media (max-width: 1010px){
+
+    .unidad-proyecto {
+        width: 19rem;
+        MIN-HEIGHT: 16REM;
+        PADDING: 2REM;
+    }
+}
+
+
+
+@media (max-width: 900px){
+    .sidebar{
+        width: 25rem;;
+    }
+    .proyectos{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 750px),(max-height: 412px){
+    .sidebar{
+        display: none;
+    }
+
+    .main{
+        padding: 2rem;
+    }
+
+    .unidad-proyecto{
+        width: 80%;
+        /* height: 300px; */
+        position: relative;
+        background-color: var(--blanco-hueso);
+        border: 1px solid #ffffffa8;
+        MIN-HEIGHT: 20REM;
+        PADDING: 5%;
+    
+    }
+
+    .badge-violeta{
+        right: -20%;
+
+    }
+
+    .seccion{
+        padding: 2rem;
+    }
+
+    .nombre-grande{
+        font-size: 8rem;
+        line-height: 0.8;
+    }
+
+    .nombre-medio .naranja{
+        font-size: 2.5rem;
+    }
+
+    .nombre-medio>span{
+        display:block;
+    }
+
+    .nombre-medio{
+        margin-top: 7rem;
+        line-height: 1.2;
+    }
 }
