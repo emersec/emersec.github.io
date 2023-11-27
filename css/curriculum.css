@@ -25,6 +25,7 @@ body{
    /* height: fit-content; */
    /* MIN-height: 100vh; */
 
+
    margin: 0px; 
    display: flex;
    flex-direction: column;
@@ -272,7 +273,9 @@ background: var(--blanco-hueso);
 
 .badge-violeta{
 
-    height: 100px;width: 100px;
+    height: 100px;
+    width: 100px;
+    /* min-width: 100px; */
     background-color: var(--violeta-azulado);
     border: 3px solid #ffffff85;
     position: absolute;
@@ -286,6 +289,8 @@ background: var(--blanco-hueso);
     font-size: 1.3rem;
     font-family: monospace;
     padding: 0.5rem;
+    z-index: 1;
+
 }
 
 .unidad-proyecto{
@@ -302,9 +307,9 @@ background: var(--blanco-hueso);
     PADDING: 2REM; */
 }
 
-.unidad-proyecto:not(:first-child){
+/* .unidad-proyecto:not(:first-child){
     margin-top: 2rem;
-}
+} */
 
 .contenedor-img-proyectos{
     display:grid;
@@ -383,12 +388,64 @@ background: var(--blanco-hueso);
     }
 }
 
-@media (max-width: 1010px){
+@media (max-width: 1024px){
 
     .unidad-proyecto {
-        width: 19rem;
+        width: 100%;
         MIN-HEIGHT: 16REM;
         PADDING: 2REM;
+    }
+
+    .titulo-seccion{
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+    .img-retrato{
+        height: 50%;
+        width: 50%;
+    }
+
+    .menu>li {
+        margin-bottom: 1rem;
+    }
+
+    .titulo-experiencia{
+        font-size: 2rem;;
+    }
+
+    .subtitulo-experiencia{
+        font-size: 1.2rem;;
+    }
+
+    .mt-10 {
+        margin-top: -4%;
+    }
+
+    .nombre-medio {
+        font-size: 2rem;
+    }
+
+    .nombre-grande {
+        font-size: 8rem;
+    }
+
+    .seccion{
+        /* padding: 4rem; */
+        padding: 1REM 4rem;
+    }
+
+    .menu {
+        font-size: 1.3rem;
+    }
+
+    .badge-violeta{
+        height: 71px;
+        width: 94px;
+        font-size: 1rem;
+    }
+
+    .proyectos{
+        gap: 2rem;
     }
 }
 
@@ -403,6 +460,9 @@ background: var(--blanco-hueso);
     }
 }
 
+
+
+
 @media (max-width: 750px),(max-height: 412px){
     .sidebar{
         display: none;
@@ -410,6 +470,11 @@ background: var(--blanco-hueso);
 
     .main{
         padding: 2rem;
+    }
+
+    .img-retrato{
+        height: 50%;
+        width: 50%;
     }
 
     .unidad-proyecto{
@@ -449,4 +514,20 @@ background: var(--blanco-hueso);
         margin-top: 7rem;
         line-height: 1.2;
     }
+
+    
+}
+
+
+.contenedor-modal{
+    position: relative;
+    height: 90%;
+    background-color: blue;
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 90%;
+    max-width: 900px;
+    top: 50%;
+    transform: translateY(-50%);
 }
