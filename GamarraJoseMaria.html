@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gamarra José María - Portafolio</title>
+  <link  rel="stylesheet" href="./css/fuentes.css" >
   <link rel="stylesheet" href="./css/curriculum.css">
   <link rel="shortcut icon" href="./img/cv_icon.svg" />
   
@@ -11,13 +12,15 @@
 <body>
   
   <div class="canvas-blanco">
-    <!-- <div class='backdrop'>
+    <div class='backdrop' id='backdrop'>
+    </div>
+    <div class='modal' id='modal'>
       <div class="contenedor-modal">
-
-        <div class="boton-cerrar">X</div>
+        <img class="img" >
+        <div class="cerrar-backdrop">X</div>
         
       </div>
-    </div> -->
+    </div>
 
     <div class="main">
       <sidebar class="sidebar">
@@ -147,7 +150,7 @@ const navHeight = document.querySelector('.contenedor-img-retrato').getBoundingC
 
 function updateNavColor(entries) {
 
-  console.log(entries);
+
   const [entry] = entries;
 
   entries.forEach((entrada)=>{
@@ -176,6 +179,35 @@ const observador = new IntersectionObserver(updateNavColor, {
 seccion.forEach((unaSeccion)=>{
   observador.observe(unaSeccion);
 });
+
+
+
+</script>
+
+<script>
+
+  function seHizoClick(evento){
+
+    let src = evento.target.getAttribute('src');
+
+    if (evento.target.classList.contains('imagen-proyecto')){
+
+      let backdrop = document.getElementById('backdrop').style.display='block';
+      let modal = document.querySelector('.canvas-blanco .modal');
+
+      modal.style.display='block';
+      modal.querySelector('img').setAttribute('src',src);
+
+    };
+
+    if (evento.target.classList.contains('cerrar-backdrop')){
+      let backdrop = document.getElementById('backdrop').style.display='none';
+      let modal = document.querySelector('.canvas-blanco .modal').style.display='none';
+      // modal.querySelector('img').setAttribute('src',src);
+    };
+  }  
+
+  document.addEventListener('click',seHizoClick);
 
 
 

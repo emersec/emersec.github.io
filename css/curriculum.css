@@ -38,56 +38,6 @@ html{
     scroll-behavior: smooth;
 }
 
-/* open-sans-regular - latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/open-sans-v36-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* open-sans-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: url('../fonts/open-sans-v36-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Saira Extra Condensed';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/saira-extra-condensed-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* saira-extra-condensed-500 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Saira Extra Condensed';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/saira-extra-condensed-v13-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* saira-extra-condensed-700 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Saira Extra Condensed';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/saira-extra-condensed-v13-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-
-  /* open-sans-700 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../fonts/open-sans-v36-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-
 
 .canvas-blanco{
     padding:2rem;
@@ -130,7 +80,7 @@ html{
     padding: 0rem;
     text-align: center;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
     color:var(--negro-transparente);
     margin-top: 4.5REM;
 }
@@ -138,6 +88,7 @@ html{
 .menu>li{
     margin-bottom: 1.7rem;
     transition: color 0.2s;
+    
     /* cursor:pointer; */
 }
 
@@ -153,7 +104,7 @@ html{
 }
 
 .seleccionado>a{
-    color:black !important;
+    color:#49433a !important;
 }
 
 .seccion{
@@ -263,10 +214,11 @@ background: var(--blanco-hueso);
     object-fit: cover;
     BORDER: 3px solid #ffffffa8;
     border-radius: 2px;
-    transition:border-color 0.2s;
+    transition:border-color 0.2s, transform 0.2s;
 }
 
 .imagen-proyecto:hover{
+    transform: scale(1.1);
     border-color:var(--violeta-azulado);
     cursor:pointer;
 }
@@ -340,6 +292,40 @@ background: var(--blanco-hueso);
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.modal{
+    background-color: var(--negro-transparente);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.cerrar-backdrop{
+    position: absolute;
+    right: -7px;
+    height: 24px;
+    width: 24px;
+    background-color: red;
+    z-index: 3;
+    top: -6px;
+    color: white;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 5px black;
+    cursor: pointer;
+}
+
+.block{
+    display: block;
 }
 
 @media (max-width: 1720px){
@@ -523,7 +509,7 @@ background: var(--blanco-hueso);
 .contenedor-modal{
     position: relative;
     height: 90%;
-    background-color: blue;
+    background-color: black;
     margin: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -531,4 +517,10 @@ background: var(--blanco-hueso);
     max-width: 900px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.img{
+    HEIGHT: 100%;
+    WIDTH: 100%;
+    OBJECT-FIT: contain;
 }
