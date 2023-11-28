@@ -502,6 +502,13 @@ background: var(--blanco-hueso);
         line-height: 1.2;
     }
 
+    .titulo-seccion{
+        position: sticky;
+        top: -1PX;
+        background-color: var(--color-piel);
+        z-index: 3;
+    }
+
     
 }
 
