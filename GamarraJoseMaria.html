@@ -212,4 +212,56 @@ seccion.forEach((unaSeccion)=>{
 
 
 </script>
+
+<script>
+
+let touchstartX = 0;
+let touchendX = 0;
+let distanceTraveled = 0;
+const swipeThreshold = 100;
+
+function checkDirection() {
+  if (distanceTraveled >= swipeThreshold) {
+    if (touchendX < touchstartX) {
+      alert('Swiped left! Distance: ' + distanceTraveled);
+    } else if (touchendX > touchstartX) {
+      alert('Swiped right! Distance: ' + distanceTraveled);
+    }
+  }
+}
+
+document.addEventListener('touchstart', (e) => {
+  touchstartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchmove', (e) => {
+  // Calculate the distance traveled during the move
+  distanceTraveled = Math.abs(e.changedTouches[0].screenX - touchstartX);
+});
+
+document.addEventListener('touchend', (e) => {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+});
+
+
+  // let touchstartX = 0
+  // let touchendX = 0
+      
+  // function checkDirection() {
+  //   if (touchendX < touchstartX) alert('swiped left!')
+  //   if (touchendX > touchstartX) alert('swiped right!')
+  // }
+
+  // document.addEventListener('touchstart', e => {
+  //   touchstartX = e.changedTouches[0].screenX
+  // });
+
+  // document.addEventListener('touchend', e => {
+  //   touchendX = e.changedTouches[0].screenX
+  //   checkDirection()
+  // });
+
+
+</script>
 </html>
