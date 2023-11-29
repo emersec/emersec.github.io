@@ -21,7 +21,7 @@
 }
 
 body{
-   height: 100vh;
+   height: 100dvh;
    /* height: fit-content; */
    /* MIN-height: 100vh; */
 
