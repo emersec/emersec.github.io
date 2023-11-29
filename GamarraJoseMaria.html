@@ -1,3 +1,4 @@
+<!--  GAMARRA JOSE MARIA josegamarraformosa@gmail.com 2023-11-29  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,6 +111,16 @@
               </div>
                <div class='badge-violeta'> Métricas de desempeño</div>
             </div>
+
+            <div  class="unidad-proyecto"  >
+              <div class="contenedor-img-proyectos"> 
+                <img class='imagen-proyecto'src="./img/metricas.jpg">
+                <img class='imagen-proyecto'src="./img/metricas-2.jpg">
+                <img class='imagen-proyecto'src="./img/metricas-3.jpg">
+              </div>
+               <div class='badge-violeta'> La última</div>
+            </div>
+
           </div>
          
         </section>
@@ -222,11 +233,14 @@ const swipeThreshold = 100;
 
 
 function checkDirection() {
-  if (distanceTraveled >= swipeThreshold) {
-    if (touchendX < touchstartX) {
-      alert('Swiped left! Distance: ' + distanceTraveled);
+  if (distanceTraveled >= swipeThreshold && window.visualViewport.scale==1) {
+    if (touchendX < touchstartX) {Ç
+
+      alert('window.visualViewport.scale:' + window.visualViewport.scale);
+      // alert('Swiped left! Distance: ' + distanceTraveled);
     } else if (touchendX > touchstartX) {
-      alert('Swiped right! Distance: ' + distanceTraveled);
+      alert('window.visualViewport.scale:' + window.visualViewport.scale);
+      //alert('Swiped right! Distance: ' + distanceTraveled);
     }
   }
 }
