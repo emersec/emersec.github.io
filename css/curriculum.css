@@ -36,6 +36,7 @@ html{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 62.5%;
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 
@@ -293,7 +294,7 @@ background: var(--blanco-hueso);
     top: 0;
     left: 0;
     display: none;
-    z-index: 2;
+    z-index: 4;
 }
 
 .modal{
@@ -304,7 +305,7 @@ background: var(--blanco-hueso);
     top: 0;
     left: 0;
     display: none;
-    z-index: 2;
+    z-index: 5;
 }
 
 .cerrar-backdrop{
