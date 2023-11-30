@@ -310,7 +310,7 @@ background: var(--blanco-hueso);
 
 .cerrar-backdrop{
     position: absolute;
-    right: -7px;
+    left: -7px;
     height: 24px;
     width: 24px;
     background-color: red;
@@ -516,19 +516,49 @@ background: var(--blanco-hueso);
 
 .contenedor-modal{
     position: relative;
-    height: 90%;
+    height: 98%;
     background-color: black;
     margin: auto;
     margin-top: auto;
     margin-bottom: auto;
-    width: 90%;
+    width: 98%;
     max-width: 900px;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.img{
+.img-slide{
     HEIGHT: 100%;
     WIDTH: 100%;
     OBJECT-FIT: contain;
 }
+
+.slideshow{
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.btn-slide {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+
+    top: 50%;
+    transform: translateY(-50%);
+    fill:var(--gris-letra-pequenia);
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.btn-slide:hover{
+    background-color: var(--negro-titulo);
+    border-radius: 5px;
+}
+.izquierda{
+    left: -12%;
+}
+.derecha{
+    right: -12%;
+}   

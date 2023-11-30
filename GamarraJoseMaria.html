@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamarra José María - Portafolio</title>
+  <title>Gamarra José María - Portfolio</title>
   <link  rel="stylesheet" href="./css/fuentes.css" >
   <link rel="stylesheet" href="./css/curriculum.css">
   <link rel="shortcut icon" href="./img/cv_icon.svg" />
@@ -16,9 +16,14 @@
     <div class='backdrop' id='backdrop'>
     </div>
     <div class='modal' id='modal'>
+      
       <div class="contenedor-modal">
-        <img class="img" >
-        <div class="cerrar-backdrop">X</div>
+        <div class="slideshow"></div>
+
+        <svg class='btn-slide izquierda' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M15 239c-9.4 9.4-9.4 24.6 0 33.9L207 465c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L65.9 256 241 81c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L15 239z"/></svg>
+        <svg class='btn-slide derecha'  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z"/></svg>
+     
+        <div class=" cerrar-backdrop">X</div>
         
       </div>
     </div>
@@ -201,16 +206,22 @@ seccion.forEach((unaSeccion)=>{
 
     let src = evento.target.getAttribute('src');
 
+    //click en alguna imagen
     if (evento.target.classList.contains('imagen-proyecto')){
 
       let backdrop = document.getElementById('backdrop').style.display='block';
       let modal = document.querySelector('.canvas-blanco .modal');
 
       modal.style.display='block';
-      modal.querySelector('img').setAttribute('src',src);
+      
+
+      let galeria = construirGaleriaDelProyecto(evento.target.parentElement.querySelectorAll('img'));
+
+      modal.querySelector('.slideshow').insertAdjacentHTML('beforeend',galeria);
 
     };
 
+    //click en cerrar imagen
     if (evento.target.classList.contains('cerrar-backdrop')){
       let backdrop = document.getElementById('backdrop').style.display='none';
       let modal = document.querySelector('.canvas-blanco .modal').style.display='none';
@@ -220,6 +231,20 @@ seccion.forEach((unaSeccion)=>{
 
   document.addEventListener('click',seHizoClick);
 
+function construirGaleriaDelProyecto(imagenesHTML){
+
+  let galeria = '';
+  imagenesHTML.forEach((img)=>{
+    let src=img.getAttribute('src');
+
+    galeria+='<img class="img-slide" src="'+src+'" >';
+
+    
+  });
+
+
+  return galeria;
+}
 
 
 </script>
