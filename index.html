@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barrios - Formosa</title>
     <link rel="shortcut icon" href="./img/formosa_icono.jpg" />
-
+    <link rel="stylesheet" href="./css/roboto.css">
     <link rel="stylesheet" href="css/micss.css"></link>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
@@ -24,13 +24,13 @@
         
       </div>
       <div class="grupo-botones flex">
-        <button class='mi-posicion sombra' onclick='detectarMiPosicion();'>
+        <button class='mi-posicion sombra roboto-400' onclick='detectarMiPosicion();'>
           Donde estoy
         </button>
-        <button class='otra-busqueda sombra'  onclick='otraBusqueda();'>
+        <button class='otra-busqueda sombra roboto-400'  onclick='otraBusqueda();'>
           Buscar
         </button>
-        <button class='mostrar-menu sombra' id="mostrar_menu" onclick='mostrarMenu();'>
+        <button class='mostrar-menu sombra roboto-400' id="mostrar_menu" onclick='mostrarMenu();'>
           Menu
         </button>
       </div>
@@ -41,7 +41,7 @@
       <header class="header mostrar" id="modalBuscador">
         <div class="relative">
           <button CLASS="esquina" onclick="cerrar(this)">X</button>
-          <h5 class="text-align-center" >Buscar BARRIO de la ciudad FORMOSA</h5>
+          <h5 class="text-align-center titulo-modal" >Buscar BARRIO de la ciudad FORMOSA</h5>
           <div class='contenedor_lista'>
             <input id="buscar" type="text" class="input-buscar" >
             <ul id='lista_barrios' class='lista_barrios oculto'></ul>

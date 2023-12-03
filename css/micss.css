@@ -54,7 +54,8 @@ html{
     font-size: 2.4rem;
     WIDTH: 93%;
     max-width: 600px;
-
+    font-family: 'Roboto';
+    font-weight: 400;
 }
 
 .milabel{
@@ -297,6 +298,7 @@ header.ocultar{
     color:white;
     font-size: 2.5rem;
     font-weight: 600;
+    font-family: 'Roboto Condensed';
 
 }
 
@@ -315,4 +317,14 @@ header.ocultar{
 
 .sombra:hover{
     background-color: var(--celestito-oscuro);
+}
+
+.titulo-modal{
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.roboto-400{
+    font-family: 'Roboto';
+    font-weight: 400;
 }
