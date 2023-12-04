@@ -57,16 +57,19 @@ html{
 }
 
 .sidebar{
-    display:block;
+    display:flex;
+    flex-direction: column;
     background-color: var(--naranja);
     border:0.3rem solid var(--naranja-oscuro);
     height: 100%;
     width: 40rem;
+    overflow: hidden;
+    justify-content: center;
 }
 
 .contenedor-img-retrato{
     text-align: center;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
 }
 
 .img-retrato{
@@ -83,7 +86,7 @@ html{
     font-size: 1.6rem;
     font-weight: 700;
     color:var(--negro-transparente);
-    margin-top: 4.5REM;
+    /* margin-top: 4.5REM; */
 }
 
 .menu>li{
@@ -256,14 +259,18 @@ background: var(--blanco-hueso);
 
     MIN-HEIGHT: 25REM;
     PADDING: 5REM;
-
+    /* justify-self: center; */
     /* width: 29rem;
     PADDING: 2REM; */
 }
 
-/* .unidad-proyecto:not(:first-child){
+/*
+
+.unidad-proyecto:not(:first-child){
     margin-top: 2rem;
-} */
+}
+
+ */
 
 .contenedor-img-proyectos{
     display:grid;
@@ -361,8 +368,8 @@ background: var(--blanco-hueso);
 @media (max-width: 1180px){
     
     .img-retrato {
-        height: 18rem;
-        width: 18rem;
+        height: 10rem;
+        width: 10rem;
     }
     .sidebar {
         width: 23rem;
@@ -389,8 +396,8 @@ background: var(--blanco-hueso);
         margin-bottom: 2rem;
     }
     .img-retrato{
-        height: 50%;
-        width: 50%;
+        height: 10rem;
+        width: 10rem;
     }
 
     .menu>li {
@@ -461,8 +468,8 @@ background: var(--blanco-hueso);
     }
 
     .img-retrato{
-        height: 50%;
-        width: 50%;
+        height: 8rem;
+        width: 5rem;
     }
 
     .unidad-proyecto{
@@ -510,9 +517,7 @@ background: var(--blanco-hueso);
         z-index: 3;
     }
 
-    
 }
-
 
 .contenedor-modal{
     position: relative;
@@ -544,7 +549,6 @@ background: var(--blanco-hueso);
     position: absolute;
     height: 80px;
     width: 80px;
-
     top: 50%;
     transform: translateY(-50%);
     fill:var(--gris-letra-pequenia);
@@ -556,9 +560,11 @@ background: var(--blanco-hueso);
     background-color: var(--negro-titulo);
     border-radius: 5px;
 }
+
 .izquierda{
     left: -12%;
 }
+
 .derecha{
     right: -12%;
 }   
