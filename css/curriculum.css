@@ -73,11 +73,8 @@ html{
 }
 
 .img-retrato{
-    /* height: 22rem;
-    width: 22rem; */
-
-    height: 50% !important;
-    width: 50% !important;
+    height: 20rem;
+    width: 20rem;
 
     border-radius: 50%;
     BORDER: 10PX SOLID #e9e9e938;
@@ -339,6 +336,10 @@ background: var(--blanco-hueso);
 .block{
     display: block;
 }
+
+
+/* 320px, 480px, 760px, 960px, 1200px and 1600px. */
+
 
 @media (max-width: 1720px){
     .unidad-proyecto{
