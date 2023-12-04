@@ -73,8 +73,12 @@ html{
 }
 
 .img-retrato{
-    height: 22rem;
-    width: 22rem;
+    /* height: 22rem;
+    width: 22rem; */
+
+    height: 50% !important;
+    width: 50% !important;
+
     border-radius: 50%;
     BORDER: 10PX SOLID #e9e9e938;
 }
