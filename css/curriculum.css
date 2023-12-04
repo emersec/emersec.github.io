@@ -363,9 +363,18 @@ background: var(--blanco-hueso);
 
     .unidad-proyecto{
         width: 30rem;
-        
+        justify-self: center;
         MIN-HEIGHT: 20REM;
         PADDING: 2REM;
+    }
+
+    .main{
+        padding: 2rem;
+    }
+
+    .img-retrato{
+        height: 15rem;
+        width: 15rem;
     }
 }
 
@@ -457,6 +466,10 @@ background: var(--blanco-hueso);
     }
     .proyectos{
         grid-template-columns: repeat(1,1fr);
+    }
+
+    .unidad-proyecto{
+        justify-self: auto;
     }
 }
 
