@@ -25,7 +25,7 @@ body{
    /* height: fit-content; */
    /* MIN-height: 100vh; */
 
-
+   font-family: 'Fira Code','Monospace' !important;
    margin: 0px; 
    display: flex;
    flex-direction: column;
@@ -33,7 +33,7 @@ body{
 
 html{
     /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
     font-size: 62.5%;
     scroll-behavior: smooth;
     height: 100%;
@@ -65,6 +65,7 @@ html{
     width: 40rem;
     overflow: hidden;
     justify-content: center;
+    BOX-SHADOW: 5PX 5PX 0PX var(--negro-normal);
 }
 
 .contenedor-img-retrato{
@@ -100,9 +101,9 @@ html{
 .menu>li>a{
     color:var(--negro-transparente);
     text-decoration: none;
-    font-family: 'open sans';
-   
+    font-family: 'Fira Code';
 }
+
 .menu>li>a:hover{
     color:var(--negro-normal);
    
@@ -145,7 +146,7 @@ background: var(--blanco-hueso);
 }
 
 .nombre-grande{
-    font-family:'Saira Extra Condensed';
+
     font-size: 10rem;
     color:var(--negro-titulo);
     line-height: 9rem;
@@ -154,7 +155,7 @@ background: var(--blanco-hueso);
 
 .nombre-medio{
     font-size: 3rem;
-    font-family: 'Saira Extra Condensed';
+   
 }
 
 .naranja{
@@ -163,7 +164,7 @@ background: var(--blanco-hueso);
 
 .texto-chico{
     /* MARGIN-BOTTOM: 12REM; */
-    font-family: 'Open Sans';
+   
     font-size: 1.6rem;
     margin-top: 4rem;
 }
@@ -183,28 +184,28 @@ background: var(--blanco-hueso);
 
 .titulo-seccion{
     color:var(--negro-titulo);
-    font-family: 'Saira Extra Condensed';
+
     font-weight: 700;
     font-size: 5rem;
     margin-bottom: 2rem;
 }
 
 .titulo-experiencia{
-    FONT-FAMILY: 'Saira Extra Condensed';
+
     FONT-SIZE: 3REM;
     font-weight: 700;
     color: var(--negro-titulo);
 }
 
 .subtitulo-experiencia{
-    FONT-FAMILY: 'Saira Extra Condensed';
+ 
     FONT-SIZE: 2.2REM;
     font-weight: 500;
 }
 
 .texto-experiencia{
     font-size: 1.7rem;
-    font-family: 'Open Sans';
+   
     margin-top: 1.5rem;
 }
 
@@ -244,7 +245,7 @@ background: var(--blanco-hueso);
     display: flex;
     align-items: center;
     font-size: 1.3rem;
-    font-family: monospace;
+ 
     padding: 0.5rem;
     z-index: 1;
     word-break: break-word;
