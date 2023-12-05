@@ -47,7 +47,10 @@
 
 
       </sidebar>
-      <main class="main-right">
+      <main class="main-right" id="main-right">
+        <div class="contenedor-progress-bar">
+          <span class="progress-bar" id="progress-bar"></span>
+        </div>
         <section class='seccion' id="seccionAcerca">
           
             <div class="nombre-grande mt-10"> <span > CLARENCE </span> <span class="naranja">TRAYLOR </span></div>
@@ -304,4 +307,22 @@ document.addEventListener('touchend', (e) => {
 
 
 </script>
+
+
+<!-- Mi progressbar scrollbar -->
+<script>
+  let mainRight = document.getElementById('main-right');
+  mainRight.addEventListener('scroll',scrolleado);
+  
+  function scrolleado() {
+    var winScroll = mainRight.scrollTop;
+    var height = mainRight.scrollHeight - mainRight.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  }
+</script>
+
+<script></script>
+
 </html>
+

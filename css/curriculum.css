@@ -337,6 +337,24 @@ background: var(--blanco-hueso);
     display: block;
 }
 
+.contenedor-progress-bar{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    z-index: 6;
+}
+
+.progress-bar{
+   
+    background-color: var(--naranja);
+    height: 5px;
+    display: block;
+    width: 0%;
+    box-shadow: rgba(255, 176, 92, 0.54) 0px 4px 8px;
+}
 
 /* 320px, 480px, 760px, 960px, 1200px and 1600px. */
 
@@ -473,12 +491,12 @@ background: var(--blanco-hueso);
     }
 }
 
-
-
-
 @media (max-width: 750px),(max-height: 412px){
     .sidebar{
         display: none;
+    }
+    .contenedor-progress-bar{
+        display:block;
     }
 
     .main{
@@ -585,4 +603,5 @@ background: var(--blanco-hueso);
 
 .derecha{
     right: -12%;
-}   
+}
+
