@@ -62,7 +62,8 @@ html{
     background-color: var(--naranja);
     border:0.3rem solid var(--naranja-oscuro);
     height: 100%;
-    width: 40rem;
+    width: 30%;
+    max-width: 350px;
     overflow: hidden;
     justify-content: center;
     BOX-SHADOW: 5PX 5PX 0PX var(--negro-normal);
@@ -85,10 +86,9 @@ html{
     list-style: none;
     padding: 0rem;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: clamp(1.5rem,1.6vh,2rem);
     font-weight: 700;
     color:var(--negro-transparente);
-    /* margin-top: 4.5REM; */
 }
 
 .menu>li{
