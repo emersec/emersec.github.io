@@ -1,7 +1,7 @@
 /* GAMARRA JOSE MARIA josegamarraformosa@gmail.com 2023-11-29 */
 :root{
 
-    --naranja:#ffb05c;
+    /* --naranja:#ffb05c;
     --naranja-oscuro:#f09140;
     --color-piel:#fedd9a;
     --blanco-hueso:#faecc9;
@@ -13,7 +13,22 @@
     --negro:black;
 
     --negro-titulo:#343a40;
-    --gris-letra-pequenia:#868e96;
+    --gris-letra-pequenia:#868e96; */
+
+
+
+    --naranja: #8ca4d1;
+    --naranja-oscuro: #515a6d;
+    --color-piel: hsl(0 0% 97% / 1);
+    --blanco-hueso: #e5e5e5;
+    --blanco: #f9f0e9;
+    --violeta-azulado: #99bdff;
+    --blanco-blanco: #f7fcfa;
+    --negro-normal: #0000009c;
+    --negro-transparente: #00000061;
+    --negro: black;
+    --negro-titulo: #343a40;
+    --gris-letra-pequenia: #868e96;
 }
 
 *{
@@ -147,7 +162,7 @@ background: var(--blanco-hueso);
 
 .nombre-grande{
 
-    font-size: 10rem;
+    font-size: 4.5vw;
     color:var(--negro-titulo);
     line-height: 9rem;
     font-weight: 700;
