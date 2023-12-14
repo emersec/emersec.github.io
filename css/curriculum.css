@@ -162,7 +162,7 @@ background: var(--blanco-hueso);
 
 .nombre-grande{
 
-    font-size: clamp(6rem,4.5vw,10rem);
+    font-size: clamp(5rem, 1rem + 4.5vw,10rem);
     color:var(--negro-titulo);
     line-height: 6rem;
     font-weight: 700;
@@ -550,9 +550,7 @@ background: var(--blanco-hueso);
         line-height: 0.8;
     }
 
-    .nombre-medio .naranja{
-        font-size: 2.5rem;
-    }
+  
 
     .nombre-medio>span{
         display:block;
