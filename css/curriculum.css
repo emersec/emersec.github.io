@@ -66,7 +66,7 @@ html{
     width: 30%;
     max-width: 300px;
     padding: 0rem 3rem;
-    BOX-SHADOW:0PX 4PX 0PX var(--negro-normal);
+    BOX-SHADOW:0PX 0PX 0PX var(--negro-normal);
     border-left:none;
     border-right:none;
 
