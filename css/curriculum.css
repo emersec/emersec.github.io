@@ -62,11 +62,11 @@ html{
     gap:1rem;
     background-color: var(--naranja);
     border:0.2rem solid var(--naranja-oscuro);
-    height: 100%;
+
     width: 30%;
     max-width: 300px;
     padding: 0rem 3rem;
-    BOX-SHADOW: 5PX 5PX 0PX var(--negro-normal);
+    BOX-SHADOW:0PX 4PX 0PX var(--negro-normal);
     border-left:none;
     border-right:none;
 
@@ -75,21 +75,23 @@ html{
     top: 0;
     left: 0;
     width: 100%;
-    height: 3rem;
+    height:fit-content;
     max-width: none;
     z-index:1;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    padding: 0.5rem 0rem;
 }
 
 .contenedor-img-retrato{
     text-align: center;
+    display:NONE;
     /* margin-top: 5rem; */
 }
 
 .img-retrato{
     height: auto;
     width: 100%;
-
+  
     border-radius: 50%;
     BORDER: 10PX SOLID #e9e9e938;
 }
@@ -107,6 +109,8 @@ html{
 
     DISPLAY: FLEX;
     ALIGN-ITEMS: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .menu>li{
@@ -190,7 +194,7 @@ background: var(--blanco-hueso);
 .texto-chico{
     /* MARGIN-BOTTOM: 12REM; */
    
-    font-size: clamp(0.5rem, 2vw,1rem);
+    font-size: clamp(1rem, 2vw,1rem);
 
 }
 
@@ -486,5 +490,9 @@ background: var(--blanco-hueso);
 
     .main{
         padding:2rem;
+    }
+
+    .contenedor-img-retrato{
+        display: block;
     }
 }
