@@ -36,14 +36,14 @@
         </div>
        
 
-        <ul class="menu" id="menu">
+        <div class="menu" id="menu">
           <li onclick="seleccionarItem(this)" > <a href="#seccionAcerca">ACERCA DE MI</a></li>
           <li onclick="seleccionarItem(this)" > <a href="#seccionExperiencia"> EXPERIENCIA</a></li>
           <li onclick="seleccionarItem(this)">  <a href="#seccionEstudios"> ESTUDIOS</a></li>
           <li onclick="seleccionarItem(this)"> <a href="#seccionProyectos"> PROYECTOS</a></li>
           <li onclick="seleccionarItem(this)"> <a href="#seccionHerramientas"> HERRAMIENTAS</a></li>
           <li onclick="seleccionarItem(this)"> <a href="#seccionHobbies"> HOBBIES</a> </li>
-        </ul>
+        </div>
      
 
 
@@ -52,9 +52,9 @@
         <div class="contenedor-progress-bar">
           <span class="progress-bar" id="progress-bar"></span>
         </div>
-        <section class='seccion' id="seccionAcerca">
+        <section class='seccion acerca' id="seccionAcerca">
           
-            <div class="nombre-grande mt-10"> <span > CLARENCE </span> <span class="naranja">TRAYLOR </span></div>
+            <div class="nombre-grande "> <span > CLARENCE </span> <span class="naranja">TRAYLOR </span></div>
             <div class="nombre-medio"> <span>Formosa, Argentina</span> <span>· (370) 426-7214 · </span><span class="naranja">JOSEGAMARRAFORMOSA@GMAIL.COM</span></div>
             <div class="texto-chico"> I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</div>
             <div class="contacto-redes">
@@ -65,7 +65,7 @@
           
         </section>
 
-        <section class='seccion' id="seccionExperiencia">
+        <section class='seccion centrar-grilla' id="seccionExperiencia" >
           <div class="titulo-seccion">EXPERIENCIA</div>
 
           <div class="experiencia">
@@ -93,7 +93,10 @@
                 <img class='imagen-proyecto'src="./img/buscar-barrio.jpg">
                 <img class='imagen-proyecto'src="./img/barrio-3.jpg">
               </div>
-               <div class='badge-violeta'> Permite buscar los barrios de Formosa</div>
+               <div class='badge-violeta'> 
+                <div>buscar los barrios de Formosa</div> 
+                <button class="boton-brutal"><a href="#">Ver demo</a></button>
+              </div>
             </div>
   
             <div  class="unidad-proyecto" >
@@ -102,14 +105,19 @@
                 <img class='imagen-proyecto'src="./img/anticipo-haberes2.jpg">
                 <img class='imagen-proyecto'src="./img/anticipo-haberes-mail.jpg">
               </div>
-               <div class='badge-violeta'> Anticipos de Haberes</div>
+               <div class='badge-violeta'> Anticipos de Haberes
+
+                <button class="boton-brutal"><a href="#">Ver demo</a></button>
+               </div>
             </div>
 
             <div  class="unidad-proyecto"  >
               <div class="contenedor-img-proyectos">
                 <!-- <img class='imagen-proyecto'src="./img/buscar-barrio.jpg"> -->
               </div>
-               <div class='badge-violeta'> Visor de RRHH (colaboracion)</div>
+               <div class='badge-violeta'> Visor de RRHH (colaboracion)
+                <button class="boton-brutal"><a href="#">Ver demo</a></button>
+               </div>
             </div>
 
             <div  class="unidad-proyecto"  >
@@ -118,7 +126,10 @@
                 <img class='imagen-proyecto'src="./img/metricas-2.jpg">
                 <img class='imagen-proyecto'src="./img/metricas-3.jpg">
               </div>
-               <div class='badge-violeta'> Métricas de desempeño</div>
+               <div class='badge-violeta'>
+                 Métricas de desempeño
+                 <button class="boton-brutal"><a href="#">Ver demo</a></button>
+                </div>
             </div>
 
             <div  class="unidad-proyecto"  >
@@ -127,7 +138,9 @@
                 <img class='imagen-proyecto'src="./img/metricas-2.jpg">
                 <img class='imagen-proyecto'src="./img/metricas-3.jpg">
               </div>
-               <div class='badge-violeta'> La última</div>
+               <div class='badge-violeta'> La última
+                <button class="boton-brutal"><a href="#">Ver demo</a></button>
+               </div>
             </div>
 
           </div>
