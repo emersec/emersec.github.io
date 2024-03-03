@@ -91,9 +91,17 @@ html{
 .img-retrato{
     height: auto;
     width: 100%;
-  
     border-radius: 50%;
     BORDER: 10PX SOLID #e9e9e938;
+}
+
+.img-retrato-acerca{
+    display:block;
+    height: auto;
+    width: min(13rem, 100%);
+    border-radius: 50%;
+    BORDER: 10PX SOLID #dbe0e9;
+    justify-self: center;
 }
 
 .menu{
@@ -494,5 +502,9 @@ background: var(--blanco-hueso);
 
     .contenedor-img-retrato{
         display: block;
+    }
+
+    .img-retrato-acerca{
+        display:none;
     }
 }
