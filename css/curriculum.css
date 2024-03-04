@@ -46,7 +46,7 @@ html{
     width: 100%;
     background-color: var(--blanco-blanco);
     position: relative;
-    min-height: 800px;
+   
 }
 
 .main{
@@ -54,7 +54,9 @@ html{
     height: 100%;
     width: 100%;
     padding: 0rem;
-    display: flex;
+   display: grid;
+
+    
 }
 
 .sidebar{
@@ -72,8 +74,7 @@ html{
     border-right:none;
 
 
-    position: fixed;
-    top: 0;
+        top: 0;
     left: 0;
     width: 100%;
     height:fit-content;
@@ -489,7 +490,7 @@ background: var(--blanco-hueso);
         max-width: 300px;
         padding: 0rem 3rem;
         BOX-SHADOW: 5PX 5PX 0PX var(--negro-normal);
-        position: inITIAL;
+     
 
     }
 
@@ -499,6 +500,7 @@ background: var(--blanco-hueso);
 
     .main{
         padding:2rem;
+        display: flex;
     }
 
     .contenedor-img-retrato{
