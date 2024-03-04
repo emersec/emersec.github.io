@@ -46,6 +46,7 @@ html{
     width: 100%;
     background-color: var(--blanco-blanco);
     position: relative;
+    min-height: 800px;
 }
 
 .main{
