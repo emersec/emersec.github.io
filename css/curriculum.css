@@ -343,7 +343,7 @@ background: var(--blanco-hueso);
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
     gap: 2rem;
-    grid-auto-rows: 1fr;
+
     padding: 1rem;
 }
 
