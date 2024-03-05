@@ -153,8 +153,9 @@ html{
 
 .acerca{
     display: grid;
-    align-content:center;
+    place-content:center;
     gap:2rem;
+
 }
 .main-right{
     flex: 1;
@@ -204,8 +205,9 @@ background: var(--blanco-hueso);
 .texto-chico{
     /* MARGIN-BOTTOM: 12REM; */
    
-    font-size: clamp(1rem, 2vw,1rem);
-
+    /* font-size: clamp(1rem, 2vw,1rem);  ANTERIOR?*/
+    max-width: 110ch;
+    font-size: clamp(1rem,1.1vw,1.7rem);
 }
 
 .contacto-redes{
@@ -250,7 +252,7 @@ background: var(--blanco-hueso);
     font-size:clamp(1rem,1.1vw,1.7rem); 
     margin-top: 1.5rem;
     color:#464545;
-    
+    max-width: 110ch;
 }
 
 .experiencia{
