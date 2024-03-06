@@ -435,7 +435,7 @@ background: var(--blanco-hueso);
     margin-top: auto;
     margin-bottom: auto;
     width: 98%;
-    max-width: 900px;
+   
     top: 50%;
     transform: translateY(-50%);
 }
@@ -451,6 +451,8 @@ background: var(--blanco-hueso);
     height: 100%;
     width: 100%;
     overflow: hidden;
+    max-width: 900px;
+    margin: auto;
 }
 
 .btn-slide {
@@ -470,11 +472,11 @@ background: var(--blanco-hueso);
 }
 
 .izquierda{
-    left: -12%;
+    left: 0;
 }
 
 .derecha{
-    right: -12%;
+    right: 0;
 }
 
 
