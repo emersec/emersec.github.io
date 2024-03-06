@@ -338,6 +338,7 @@ background: var(--blanco-hueso);
 
  */
 
+ 
 .contenedor-img-proyectos{
     display:grid;
     grid-template-columns: repeat(2,1fr);
