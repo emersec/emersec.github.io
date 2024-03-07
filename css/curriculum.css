@@ -475,7 +475,7 @@ background: var(--blanco-hueso);
 
 .btn-slide:hover{
     background-color: var(--negro-titulo);
-    border-radius: 5px;
+ 
 }
 
 .izquierda{
