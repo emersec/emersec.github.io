@@ -446,6 +446,7 @@ background: var(--blanco-hueso);
     WIDTH: 100%;
     OBJECT-FIT: contain;
     position: absolute;
+    display: none;
 }
 
 .slideshow{
@@ -486,20 +487,35 @@ background: var(--blanco-hueso);
     right: 0;
 }
 
+
+
+
+.por-izquierda{
+    animation:entrar-izquierda 0.25s forwards;
+    display: block;
+
+    & ~ img
+}
+
 .entrar-izquierda{
-    animation:entrar-izquierda 0.25s;
+    animation:entrar-izquierda 0.25s forwards;
+    display: block;
+    
 }
 
 .salir-izquierda{
-    animation:salir-izquierda 0.25s;
+    animation:salir-izquierda 0.25s forwards;
+    display: block;
 }
 
 .entrar-derecha{
-    animation:entrar-derecha 0.25s;
+    animation:entrar-derecha 0.25s forwards;
+    display: block;
 }
 
 .salir-derecha{
-    animation:salir-derecha 0.25s;
+    animation:salir-derecha 0.25s forwards;
+    display: block;
 }
 
 @keyframes entrar-izquierda{
@@ -573,4 +589,7 @@ background: var(--blanco-hueso);
     .img-retrato-acerca{
         display:none;
     }
+}
+.show{
+    display: block;
 }
