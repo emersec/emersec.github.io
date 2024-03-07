@@ -445,6 +445,7 @@ background: var(--blanco-hueso);
     HEIGHT: 100%;
     WIDTH: 100%;
     OBJECT-FIT: contain;
+    position: absolute;
 }
 
 .slideshow{
@@ -454,6 +455,7 @@ background: var(--blanco-hueso);
     overflow: hidden;
     max-width: 900px;
     margin: auto;
+    position: relative;
 }
 
 .btn-slide {
@@ -465,6 +467,10 @@ background: var(--blanco-hueso);
     fill:var(--gris-letra-pequenia);
     transition: background-color 0.2s;
     cursor: pointer;
+
+    border-radius: 6rem;
+    border: 1px solid #b3b3b394;
+    padding: 1rem;
 }
 
 .btn-slide:hover{
@@ -478,6 +484,58 @@ background: var(--blanco-hueso);
 
 .derecha{
     right: 0;
+}
+
+.entrar-izquierda{
+    animation:entrar-izquierda 0.25s;
+}
+
+.salir-izquierda{
+    animation:salir-izquierda 0.25s;
+}
+
+.entrar-derecha{
+    animation:entrar-derecha 0.25s;
+}
+
+.salir-derecha{
+    animation:salir-derecha 0.25s;
+}
+
+@keyframes entrar-izquierda{
+    0%{
+        left:100%;
+    }
+    100%{
+        left:0%;
+    }
+}
+
+@keyframes salir-izquierda{
+    0%{
+        left:0%;
+    }
+    100%{
+        left:-100%;
+    }
+}
+
+@keyframes entrar-derecha{
+    0%{
+        right:100%;
+    }
+    100%{
+        right:0%;
+    }
+}
+
+@keyframes salir-derecha{
+    0%{
+        right:0%;
+    }
+    100%{
+        right:-100%;
+    }
 }
 
 
