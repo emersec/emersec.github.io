@@ -460,8 +460,8 @@ background: var(--blanco-hueso);
 
 .btn-slide {
     position: absolute;
-    height: 80px;
-    width: 80px;
+    height: clamp(50px,5vw,80px);
+    width: clamp(50px,5vw,80px);
     top: 50%;
     transform: translateY(-50%);
     fill:var(--gris-letra-pequenia);
