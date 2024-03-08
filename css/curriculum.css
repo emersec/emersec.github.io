@@ -493,8 +493,20 @@ background: var(--blanco-hueso);
 .por-izquierda{
     animation:entrar-izquierda 0.25s forwards;
     display: block;
+}
+.img-slide:has(+ .por-izquierda) {
+    animation:salir-izquierda 0.25s forwards;
+    display: block; 
+}
 
-    & ~ img
+
+.por-derecha{
+    animation:entrar-derecha 0.25s forwards;
+    display: block;
+    & + .img-slide{
+        animation:salir-derecha 0.25s forwards;
+        display: block; 
+    }
 }
 
 .entrar-izquierda{

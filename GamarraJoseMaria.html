@@ -22,7 +22,7 @@
         <div class="slideshow"></div>
 
         <svg class='btn-slide izquierda' onclick="cambiarSentido(0)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M15 239c-9.4 9.4-9.4 24.6 0 33.9L207 465c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L65.9 256 241 81c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0L15 239z"/></svg>
-        <svg class='btn-slide derecha'  onclick="cambiarSentido(0)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z"/></svg>
+        <svg class='btn-slide derecha'  onclick="cambiarSentido(1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z"/></svg>
      
         <div class=" cerrar-backdrop">X</div>
         
@@ -265,10 +265,31 @@ function construirGaleriaDelProyecto(imagenesHTML){
 }
 
 function cambiarSentido(direccion){
-  let imagenes = document.querySelectorAll('.slideshow .img-slide');
 
-  imagenes[0].classList.add('salir-izquierda');
-  imagenes[1].classList.add('entrar-izquierda');
+  let imagenes = document.querySelectorAll('.slideshow .img-slide');
+  let seleccionado = document.querySelector('.slideshow .img-slide.por-izquierda') || document.querySelector('.slideshow .img-slide.por-derecha') || document.querySelector('.slideshow .img-slide.show') ;
+
+  if(seleccionado){
+    seleccionado.classList.remove('por-izquierda','por-derecha','show');
+
+    let anterior = seleccionado.previousSibling;
+    let siguiente = seleccionado.nextSibling;
+
+    if(direccion==0){
+
+      anterior =  seleccionado.previousSibling || imagenes[0];
+      anterior.classList.add('por-derecha');
+    }else{
+
+      siguiente = seleccionado.nextSibling || imagenes[0];
+      siguiente.classList.add('por-izquierda');
+    }
+    
+  }else{
+    imagenes[0].classList.add('por-izquierda');
+  }
+  
+ 
 }
 
 </script>
