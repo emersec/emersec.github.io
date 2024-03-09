@@ -267,7 +267,8 @@ background: var(--blanco-hueso);
 
 
 .imagen-proyecto{
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 100%;
     object-fit: cover;
     BORDER: 3px solid #ffffffa8;
