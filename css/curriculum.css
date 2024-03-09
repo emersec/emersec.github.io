@@ -243,14 +243,19 @@ background: var(--blanco-hueso);
 .subtitulo-experiencia{
     
     
+    DISPLAY: FLEX;
+    JUSTIFY-CONTENT: space-between;
+
+    
     FONT-SIZE: clamp(1rem,1.3vw,2.2rem);
     font-weight: 500;
+    MARGIN-TOP: 0.5REM;
 }
 
 .texto-experiencia{
     
     font-size:clamp(1rem,1.1vw,1.7rem); 
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     color:#464545;
     max-width: 110ch;
 }
@@ -432,7 +437,7 @@ background: var(--blanco-hueso);
 .contenedor-modal{
     position: relative;
     height: 98%;
-    background-color: black;
+    background-color: #0000002b;
     margin: auto;
     margin-top: auto;
     margin-bottom: auto;
@@ -443,21 +448,24 @@ background: var(--blanco-hueso);
 }
 
 .img-slide{
-    HEIGHT: 100%;
+    HEIGHT: auto;
     WIDTH: 100%;
     OBJECT-FIT: contain;
     position: absolute;
     display: none;
+    border: 7px solid  color-mix(in srgb, var(--naranja) 70%, black 30%);
 }
 
 .slideshow{
-    display: block;
+    
     height: 100%;
     width: 100%;
     overflow: hidden;
     max-width: 900px;
     margin: auto;
     position: relative;
+    display: grid;
+    place-items: center;
 }
 
 .btn-slide {

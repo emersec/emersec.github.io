@@ -70,8 +70,8 @@
           <div class="titulo-seccion">EXPERIENCIA</div>
 
           <div class="experiencia">
-            <div class="titulo-experiencia"> <DIV>SENIOR WEB DEVELOPER </DIV> <span class="naranja"> (2022 - ACTUALIDAD) </span> </div>
-            <div class="subtitulo-experiencia"> INTELITEC SOLUTIONS</div>
+            <div class="titulo-experiencia"> <DIV>FULL STACK DEVELOPER </DIV>  </div>
+            <div class="subtitulo-experiencia"> <DIV>AGUAS DE FORMOSA S.A.</DIV> <span class="naranja"> (2022 - ACTUALIDAD) </span> </div>
             <div class="texto-experiencia"> Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</div>
           </div>
 
@@ -257,6 +257,15 @@ seccion.forEach((unaSeccion)=>{
     if(evento.keyCode === 39){
       cambiarSentido(1)
     }
+
+    if(evento.key==='Esc' || evento.key==='Escape'){
+      let backdrop = document.getElementById('backdrop').style.display='none';
+      let modal = document.querySelector('.canvas-blanco .modal').style.display='none';
+    }
+
+
+
+    
   }
   document.addEventListener('click',seHizoClick);
   document.addEventListener('keydown',sePresionoTecla);
