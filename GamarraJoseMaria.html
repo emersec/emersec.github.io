@@ -223,7 +223,7 @@ seccion.forEach((unaSeccion)=>{
   function seHizoClick(evento){
 
     let src = evento.target.getAttribute('src');
-
+    let indiceImagen= Array.from(evento.target.parentNode.children).indexOf(evento.target); 
     //click en alguna imagen
     if (evento.target.classList.contains('imagen-proyecto')){
 
@@ -233,9 +233,9 @@ seccion.forEach((unaSeccion)=>{
       modal.style.display='block';
       
 
-      let galeria = construirGaleriaDelProyecto(evento.target.parentElement.querySelectorAll('img'));
+      let galeria = construirGaleriaDelProyecto(evento.target.parentElement.querySelectorAll('img'),indiceImagen);
 
-      modal.querySelector('.slideshow').insertAdjacentHTML('beforeend',galeria);
+      modal.querySelector('.slideshow').innerHTML = galeria;
 
     };
 
@@ -247,17 +247,31 @@ seccion.forEach((unaSeccion)=>{
     };
   }  
 
-  document.addEventListener('click',seHizoClick);
+  function sePresionoTecla(evento){
 
-function construirGaleriaDelProyecto(imagenesHTML){
+
+    if(evento.keyCode === 37){
+      cambiarSentido(0)
+    }
+
+    if(evento.keyCode === 39){
+      cambiarSentido(1)
+    }
+  }
+  document.addEventListener('click',seHizoClick);
+  document.addEventListener('keydown',sePresionoTecla);
+
+
+function construirGaleriaDelProyecto(imagenesHTML,indiceImagen){
 
   let galeria = '';
+  let i = 0;
   imagenesHTML.forEach((img)=>{
     let src=img.getAttribute('src');
+    let show = indiceImagen==i? 'show':'';
+    galeria+='<img class="img-slide '+show+' " src="'+src+'" >';
 
-    galeria+='<img class="img-slide" src="'+src+'" >';
-
-    
+    i++;
   });
 
 
