@@ -188,7 +188,7 @@ background: var(--blanco-hueso);
     font-size: clamp(2rem, 1rem + 4.5vw,5rem);
     color:var(--negro-titulo);
     line-height: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
 
 }
 
@@ -200,6 +200,11 @@ background: var(--blanco-hueso);
 
 .naranja{
     color:var(--naranja);
+}
+
+.fecha-card{
+    color:var(--naranja);
+    font-weight: 400;
 }
 
 .texto-chico{
@@ -238,6 +243,9 @@ background: var(--blanco-hueso);
     FONT-SIZE: clamp(1rem,1.3vw,2.5rem);
     font-weight: 700;
     color: var(--negro-titulo);
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .subtitulo-experiencia{
@@ -255,13 +263,16 @@ background: var(--blanco-hueso);
 .texto-experiencia{
     
     font-size:clamp(1rem,1.1vw,1.7rem); 
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     color:#464545;
     max-width: 110ch;
 }
 
 .experiencia{
     /*margin-bottom: 5rem;*/
+
+    background-color: #eceef9;
+    padding: 1rem;
 }
 
 .centrar-grilla{
@@ -325,7 +336,7 @@ background: var(--blanco-hueso);
 
 .unidad-proyecto{
 
-    /* height: 300px; */
+    min-height: 10rem; 
     position: relative;
     background-color: var(--blanco-hueso);
     border: 1px solid #ffffffa8;
@@ -433,6 +444,15 @@ background: var(--blanco-hueso);
     box-shadow: #5cb2ff8a 0px 4px 8px;
 }
 
+
+.parrafo{
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    &::marker{
+        content: '# ';
+    }
+}
 
 .contenedor-modal{
     position: relative;
