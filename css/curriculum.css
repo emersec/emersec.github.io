@@ -84,6 +84,11 @@ html{
     padding: 0.5rem 0rem;
 }
 
+.contenedor-img-perfil{
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+}
 .contenedor-img-retrato{
     text-align: center;
     display:NONE;
@@ -100,7 +105,7 @@ html{
 .img-retrato-acerca{
     display:block;
     height: auto;
-    width: min(13rem, 100%);
+    width: min(8rem, 100%);
     border-radius: 50%;
     BORDER: 10PX SOLID #dbe0e9;
     justify-self: center;
