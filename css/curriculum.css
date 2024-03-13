@@ -82,6 +82,8 @@ html{
     z-index:1;
     grid-template-columns: 1fr;
     padding: 0.5rem 0rem;
+
+    display: none;
 }
 
 .contenedor-img-perfil{
@@ -154,8 +156,13 @@ html{
     flex: 1;
     min-height: 100%;
     padding: 1rem 2rem;
+  
+
 }
 
+.seccion:not(:first-of-type){
+    BORDER-TOP: 0.1REM SOLID var(--naranja-oscuro);
+}
 .acerca{
     display: grid;
     place-content:center;
