@@ -140,7 +140,7 @@ html{
 .menu>li>a{
     color:var(--negro-transparente);
     text-decoration: none;
-    font-family: 'Fira Code';
+    font-family: 'Fira Code','monospace','roboto';
 }
 
 .menu>li>a:hover{
@@ -311,10 +311,11 @@ background: var(--blanco-hueso);
     BORDER: 3px solid #ffffffa8;
     border-radius: 2px;
     transition:border-color 0.2s, transform 0.2s;
+
 }
 
 .imagen-proyecto:hover{
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     border-color:var(--violeta-azulado);
     cursor:pointer;
 }
