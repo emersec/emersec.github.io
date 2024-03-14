@@ -395,6 +395,8 @@ background: var(--blanco-hueso);
     gap: 1rem;
 
     grid-template-columns: repeat(auto-fit,minmax(min(400px,100%),1fr));
+
+    grid-auto-rows: 1fr;
 }
 
 .iconos-herramientas>svg{
