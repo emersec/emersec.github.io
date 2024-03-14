@@ -28,7 +28,7 @@ body{
    /* height: fit-content; */
    /* MIN-height: 100vh; */
 
-   font-family: 'Fira Code','Monospace' !important;
+   font-family: 'Fira Code','monospace','roboto' !important;
    margin: 0px; 
    display: flex;
    flex-direction: column;
