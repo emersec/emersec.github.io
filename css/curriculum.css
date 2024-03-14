@@ -199,14 +199,22 @@ background: var(--blanco-hueso);
 
     font-size: clamp(2rem, 1rem + 4.5vw,5rem);
     color:var(--negro-titulo);
-    line-height: 2.5rem;
+    line-height: 0.8;
     font-weight: 600;
 
+}
+.profesion{
+    FONT-SIZE: clamp(1rem, 3vw, 2rem);
+    COLOR: var(--gris-letra-pequenia);
+    LINE-HEIGHT: 1;
+    MARGIN-TOP: 1.2REM;
 }
 
 .nombre-medio{
     
     font-size: clamp(1rem,3vw,2rem);
+    display: flex;
+    flex-wrap: wrap;
    
 }
 
@@ -642,6 +650,9 @@ background: var(--blanco-hueso);
 
     .img-retrato-acerca{
         display:none;
+    }
+    .seccion:not(:first-of-type){
+        border-top: none;
     }
 }
 .show{
