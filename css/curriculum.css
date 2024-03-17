@@ -362,11 +362,15 @@ background: var(--blanco-hueso);
     position: relative;
     background-color: var(--blanco-hueso);
     border: 1px solid #ffffffa8;
-
+    transition:border-color 0.25s;
     
     grid-template-columns: repeat(2,1fr);
     display: grid;
     border: 0.2rem solid var(--naranja-oscuro);
+
+    &:hover{
+        border-color: var(--naranja);
+    }
 }
 
 /*
