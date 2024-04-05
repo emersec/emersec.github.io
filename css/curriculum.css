@@ -60,6 +60,7 @@ html{
 }
 
 .sidebar{
+    position: relative;
     display:GRID;
     align-content: center;
     gap:1rem;
@@ -161,6 +162,7 @@ html{
 
 }
 
+
 .seccion:not(:first-of-type){
     BORDER-TOP: 0.1REM SOLID var(--naranja-oscuro);
 }
@@ -226,6 +228,17 @@ background: var(--blanco-hueso);
 .texto-galeria{
     width: 400px;
     background-color: var(--naranja);
+    DISPLAY:GRID;
+    gap: 1REM;
+    place-content: flex-start;
+    padding: 1rem;
+
+}
+
+.tecnologias-usadas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 .naranja{
     color:var(--naranja);
@@ -706,6 +719,10 @@ background: var(--blanco-hueso);
     padding: 0.5rem 1rem;
     border:1px solid black;
     PADDING-RIGHT:2REM;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   
   }
   
